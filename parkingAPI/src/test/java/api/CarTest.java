@@ -1,5 +1,7 @@
 package api;
 
+import api.vehicle.Car;
+import api.vehicle.Vehicle;
 import org.junit.Before;
 import org.junit.Test;
 

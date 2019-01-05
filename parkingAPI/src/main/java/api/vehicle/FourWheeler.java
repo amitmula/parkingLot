@@ -1,4 +1,4 @@
-package api;
+package api.vehicle;
 
 public abstract class FourWheeler implements Vehicle {
     private String name, colour, number;

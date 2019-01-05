@@ -1,8 +1,8 @@
-package api;
+package api.vehicle;
 
-public class Car extends FourWheeler {
+public class Bus extends FourWheeler {
 
-    public Car(String name, String colour, String number) {
+    public Bus(String name, String colour, String number) {
         super(name, colour, number);
     }
 

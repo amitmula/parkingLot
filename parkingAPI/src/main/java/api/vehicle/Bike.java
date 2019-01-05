@@ -1,4 +1,4 @@
-package api;
+package api.vehicle;
 
 public class Bike extends TwoWheeler {
 
