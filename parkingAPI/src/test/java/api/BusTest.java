@@ -2,6 +2,7 @@ package api;
 
 import api.vehicle.Bus;
 import api.vehicle.Vehicle;
+import api.vehicle.VehicleType;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -15,8 +16,8 @@ public class BusTest {
     }
 
     @Test
-    public void assertInstanceType() throws Exception {
-        assertTrue(this.bus instanceof Bus);
+    public void assertVehicleType() throws Exception {
+        assertTrue(this.bus.getType().equals(VehicleType.BUS));
     }
 
     @Test
