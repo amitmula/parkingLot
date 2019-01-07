@@ -1,8 +1,8 @@
-package api;
+package domain;
 
-import api.vehicle.Bus;
-import api.vehicle.Vehicle;
-import api.vehicle.VehicleType;
+import com.sapient.assignment.parkinglot.domain.vehicle.Bus;
+import com.sapient.assignment.parkinglot.domain.vehicle.Vehicle;
+import com.sapient.assignment.parkinglot.domain.vehicle.VehicleType;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -17,7 +17,7 @@ public class BusTest {
 
     @Test
     public void assertVehicleType() throws Exception {
-        assertTrue(this.bus.getType().equals(VehicleType.BUS));
+        assertTrue(this.bus.getVehicleType().equals(VehicleType.BUS));
     }
 
     @Test
@@ -32,7 +32,7 @@ public class BusTest {
 
     @Test
     public void getNumber() throws Exception {
-        assertEquals(this.bus.getNumber(), "SUPER-91");
+        assertEquals(this.bus.getRegNumber(), "SUPER-91");
     }
 
 }
