@@ -10,22 +10,17 @@ import org.springframework.stereotype.Service;
 public class ParkingManagerService {
 
     @Autowired
-    ParkingLotService parkingLotService;
+    private ParkingLotService parkingLotService;
 
     @Autowired
-    ParkingSlotService parkingSlotService;
+    private ParkingSlotService parkingSlotService;
 
     @Autowired
-    VehicleService vehicleService;
-
-    @Autowired
-    ParkingManagerService parkingManagerService;
+    private VehicleService vehicleService;
 
     public ParkingSlot park(String reg_number) {
-        Vehicle vehicleInfo = vehicleService.getVehicleInfo(reg_number);
-
         if(vehicleService.isVehicleExists(reg_number)) {
-            Vehicle vehicle = vehicleService.getVehicleByRegNum(reg_number);
+            Vehicle vehicle = vehicleService.getVehicleByRegNum(reg_number); //get updated from the service
             ParkingSlot parkingSlot = parkingSlotService.findVehicle(vehicle);
             if(null != parkingSlot) {
                 throw new RuntimeException("Vehicle is already parked in the parking slot id : " + parkingSlot.getSlotId());
@@ -33,6 +28,7 @@ public class ParkingManagerService {
                 return parkingLotService.park(vehicle);
             }
         } else {
+            Vehicle vehicleInfo = vehicleService.getVehicleInfo(reg_number);
             return parkingLotService.park(vehicleService.createVehicle(vehicleInfo));
         }
     }

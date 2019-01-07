@@ -43,9 +43,6 @@ public class ParkingFloorService {
         if(null != parkingSlot && parkingSlot.getVehicle().equals(vehicle)) return parkingSlot;
 
         if(parkingRows.size() < Integer.parseInt(rowsCount)) {
-            /*ParkingFloor parkingFloor = createParkingFloor(
-                new ParkingFloor(floor.getParkingLot(), parkingRows.size() + 1, Integer.parseInt(rowsCount))
-            );*/
             ParkingRow parkingRow = parkingRowService.createParkingRow(
                 new ParkingRow(floor, parkingRows.size() + 1)
             );
