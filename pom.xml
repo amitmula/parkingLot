@@ -17,7 +17,6 @@
 
     <modules>
         <module>parkingAPI</module>
-        <module>parkingService</module>
         <module>vehicleInfoService</module>
     </modules>
 
