@@ -63,7 +63,6 @@ public class ParkingFloorServiceTest {
         ParkingFloor parkingFloor = new ParkingFloor(new ParkingLot(3), 1, 10);
         List<ParkingRow> parkingRows = new ArrayList();
         parkingRows.add(new ParkingRow(parkingFloor, 1));
-        when(parkingFloorRepo.parkVehicle(bus)).thenReturn(parkingSlot);
         when(parkingRowService.getAvailableRows(parkingFloor)).thenReturn(parkingRows);
         when(parkingRowService.park(bus, parkingRows.get(0))).thenReturn(parkingSlot);
         ParkingSlot slot = parkingFloorService.park(bus, parkingFloor);
